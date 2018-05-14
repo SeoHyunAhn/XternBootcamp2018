@@ -11,3 +11,8 @@ function changeh2(){
 }
 
 //add a form to the page, text input in form, update the heading with the text typeed
+function changeTitle(ev){
+  const header = document.getElementById('input').value
+  // debugger
+  document.getElementById('h1').innerHTML = header
+}
