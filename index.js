@@ -5,4 +5,9 @@ function changeh1(){
   header.textContent = "changed"
 }
 // add multiple heading to the page and make the button change the second one
+function changeh2(){
+  const header = document.querySelector('h2')
+  header.textContent = "Changing the second heading"
+}
+
 //add a form to the page, text input in form, update the heading with the text typeed
