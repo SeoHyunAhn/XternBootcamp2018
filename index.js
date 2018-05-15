@@ -1,22 +1,27 @@
 const form = document.querySelector('form#userForm')
-const ul = document.createElement('ul');
 let index = 0;
 const handlesubmit = function(ev) {
   ev.preventDefault()
   const users = document.querySelector('#users')
-  const name = ev.target.userName.value
-  const age = form.age.value
-  const color = form.favoriteColor.value
-  renderListIterm(name)
-  renderListIterm(age)
-  renderListIterm(color)
-  users.appendChild(ul)
+  renderList(users)
   form.reset()
   form.userName.focus()
 }
 form.addEventListener('submit', handlesubmit)
 
-function renderListIterm(items) {
+function renderList(users){
+  const ul = document.createElement('ul');
+  const name = form.userName.value
+  const age = form.age.value
+  const color = form.favoriteColor.value
+
+  renderListIterm(ul, name)
+  renderListIterm(ul, age)
+  renderListIterm(ul, color)
+  users.appendChild(ul)
+}
+
+function renderListIterm(ul, items) {
   const list = ["Name: ", "Age: ", "Color: "]
   let flag = 0;
   const li = document.createElement('li')
