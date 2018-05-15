@@ -26,5 +26,6 @@ const handlesubmit = function(ev) {
   users.innerHTML += '<p>' + ev.target.userName.value +', '+ form.age.value+ "</p>"
   // form.userName.value = ''
   form.reset()
+  form.userName.focus()
 }
 form.addEventListener('submit', handlesubmit)
