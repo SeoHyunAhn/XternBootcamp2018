@@ -8,18 +8,17 @@
 </head>
 
 <body>
-  <h1 id = 'h1'>First heading</h1>
+  <h1 id='h1'>First heading</h1>
   <!-- <h2>Second heading</h2> -->
   <!-- <h3>Third heading</h3> -->
-<form class="forminput" id="userForm">
+  <form class="forminput" id="userForm">
     How would you want to change the title? <br>
-        <input id = 'input' type="text" name="userName" value="">
-        <br>
-</form>
+    <input id='input' type="text" name="userName" value="" autofocus>
+    <br>
+  </form>
+  <button type="submit"> Change it </button>
 
-  <!-- <button type="button" name="button" onclick="changeh1()"> Click me </button> -->
-  <!-- <button type="button" name="button" onclick="changeh2()"> Click me to change 2nd heading </button> -->
-  <button type="submit" onclick="changeTitle()"> Change it </button>
+  <div id="users"></div>
   <script src="index.js">
   </script>
 </body>
