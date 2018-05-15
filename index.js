@@ -31,6 +31,13 @@ const handlesubmit = function(ev) {
 
   const color = document.createElement('li')
   color.textContent = `color: ${form.favoriteColor.value}`
+
+  const colordiv = document.createElement('div')
+  colordiv.style.backgroundColor= form.favoriteColor.value
+  colordiv.style.width = '6rem'
+  colordiv.style.height = '3rem'
+  color.appendChild(colordiv)
+
   ul.appendChild(li)
   ul.appendChild(age)
   ul.appendChild(color)
