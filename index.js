@@ -22,10 +22,25 @@ const handlesubmit = function(ev) {
   ev.preventDefault()
   const users = document.querySelector('#users')
 
-  const p = document.createElement('p');
-  p.style.backgroundColor = form.favoriteColor.value
-  p.textContent = `${ev.target.userName.value}, ${form.age.value}, ${form.favoriteColor.value}`
-  users.appendChild(p)
+  const ul = document.createElement('ul');
+  const li = document.createElement('li')
+  li.textContent = `Name: ${ev.target.userName.value}`
+
+  const age = document.createElement('li')
+  age.textContent = `age: ${form.age.value}`
+
+  const color = document.createElement('li')
+  color.textContent = `color: ${form.favoriteColor.value}`
+  ul.appendChild(li)
+  ul.appendChild(age)
+  ul.appendChild(color)
+  // li.textContent +=`Age: ${form.age.value}, ${form.favoriteColor.value}`
+  users.appendChild(ul)
+
+  // const p = document.createElement('p');
+  // p.style.backgroundColor = form.favoriteColor.value
+  // p.textContent = `${ev.target.userName.value}, ${form.age.value}, ${form.favoriteColor.value}`
+  // users.appendChild(p)
   // users.innerHTML += `<p>${ev.target.userName.value}, ${form.age.value}</p>`
   form.reset()
   form.userName.focus()
