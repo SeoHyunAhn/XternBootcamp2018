@@ -16,3 +16,11 @@ function changeTitle(ev){
   // debugger
   document.getElementById('h1').innerHTML = header
 }
+
+const form = document.querySelector('form#userForm')
+const handlesubmit = function(ev){
+  ev.preventDefault()
+  const heading = document.querySelector('h1')
+  heading.textContent=document.querySelector('input').value
+}
+form.addEventListener('submit', handlesubmit)
