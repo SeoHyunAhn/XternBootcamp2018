@@ -21,11 +21,11 @@ const form = document.querySelector('form#userForm')
 const handlesubmit = function(ev) {
   ev.preventDefault()
   const users = document.querySelector('#users')
-  // debugger
-  // heading.textContent=document.querySelector('input').value
-  // users.innerHTML += '<p>' + ev.target.userName.value +', '+ form.age.value+ "</p>"
-  // form.userName.value = ''
-  users.innerHTML += `<p>${ev.target.userName.value}, ${form.age.value}</p>`
+
+  const p = document.createElement('p');
+  p.textContent = `${ev.target.userName.value}, ${form.age.value}`
+  users.appendChild(p)
+  // users.innerHTML += `<p>${ev.target.userName.value}, ${form.age.value}</p>`
   form.reset()
   form.userName.focus()
 }
