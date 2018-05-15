@@ -23,8 +23,9 @@ const handlesubmit = function(ev) {
   const users = document.querySelector('#users')
   // debugger
   // heading.textContent=document.querySelector('input').value
-  users.innerHTML += '<p>' + ev.target.userName.value +', '+ form.age.value+ "</p>"
+  // users.innerHTML += '<p>' + ev.target.userName.value +', '+ form.age.value+ "</p>"
   // form.userName.value = ''
+  users.innerHTML += `<p>${ev.target.userName.value}, ${form.age.value}</p>`
   form.reset()
   form.userName.focus()
 }
