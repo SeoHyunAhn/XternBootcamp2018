@@ -32,24 +32,21 @@ const handlesubmit = function(ev) {
   const color = document.createElement('li')
   color.textContent = `color: ${form.favoriteColor.value}`
 
-  const colordiv = document.createElement('div')
-  colordiv.style.backgroundColor= form.favoriteColor.value
-  colordiv.style.width = '6rem'
-  colordiv.style.height = '3rem'
-  color.appendChild(colordiv)
+  color.appendChild(renderColor(form.favoriteColor.value))
 
   ul.appendChild(li)
   ul.appendChild(age)
   ul.appendChild(color)
-  // li.textContent +=`Age: ${form.age.value}, ${form.favoriteColor.value}`
   users.appendChild(ul)
-
-  // const p = document.createElement('p');
-  // p.style.backgroundColor = form.favoriteColor.value
-  // p.textContent = `${ev.target.userName.value}, ${form.age.value}, ${form.favoriteColor.value}`
-  // users.appendChild(p)
-  // users.innerHTML += `<p>${ev.target.userName.value}, ${form.age.value}</p>`
   form.reset()
   form.userName.focus()
 }
 form.addEventListener('submit', handlesubmit)
+
+function renderColor(color){
+    const colordiv = document.createElement('div')
+    colordiv.style.backgroundColor= color
+    colordiv.style.width = '6rem'
+    colordiv.style.height = '3rem'
+    return colordiv;
+}
