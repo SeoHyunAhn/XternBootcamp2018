@@ -9,42 +9,29 @@ const handlesubmit = function(ev) {
 }
 form.addEventListener('submit', handlesubmit)
 
-function renderList(users){
+function renderList(users) {
   const ul = document.createElement('ul');
-  const name = form.userName.value
-  const age = form.age.value
-  const color = renderColor(form.favoriteColor.value)
-
-  // renderListIterm(ul, name)
-  // renderListIterm(ul, age)
-  // renderListIterm(ul, color)
-  ul.appendChild(renderListIterm('Name', name));
-  ul.appendChild(renderListIterm('Age', age));
-  ul.appendChild(renderListIterm('Color', color));
+  const user = {
+    name: form.userName.value,
+    age: form.age.value,
+    favoriteColor: renderColor(form.favoriteColor.value),
+  }
+  Object.keys(user).map(function(key) {
+    const item = renderListIterm(key, user[key])
+    ul.appendChild(item)
+  })
   users.appendChild(ul)
 }
 
 function renderListIterm(ul, items) {
-  // const list = ["Name: ", "Age: ", "Color: "]
-  // let flag = 0;
   const li = document.createElement('li')
   li.textContent = `${ul}: `
   try {
     li.appendChild(items)
   } catch (e) {
-    li.textContent +=items
+    li.textContent += items
   }
   return li;
-  // li.textContent = `${list[index]} ${items}`
-  // if (list[index] == "Color: ") {
-  //   li.appendChild(renderColor(items))
-  //   flag = 1;
-  // }
-  // ul.appendChild(li)
-  // index += 1;
-  // if (flag == 1) {
-  //   index = 0;
-  // }
 }
 
 function renderColor(color) {
