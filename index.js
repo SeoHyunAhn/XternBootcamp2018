@@ -17,7 +17,7 @@ form.addEventListener('submit', handlesubmit)
 
 function renderList(user) {
   const ul = document.createElement('ul');
-  Object.keys(user).map(function(key) {
+  Object.keys(user).map(key => {
     const item = renderListIterm(key, user[key])
     ul.appendChild(item)
   })
@@ -42,3 +42,6 @@ function renderColor(color) {
   colordiv.style.height = '3rem'
   return colordiv;
 }
+
+
+// const doTheThing=()=>{}
