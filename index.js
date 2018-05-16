@@ -3,24 +3,25 @@ let index = 0;
 const handlesubmit = function(ev) {
   ev.preventDefault()
   const users = document.querySelector('#users')
-  renderList(users)
-  form.reset()
-  form.userName.focus()
-}
-form.addEventListener('submit', handlesubmit)
-
-function renderList(users) {
-  const ul = document.createElement('ul');
   const user = {
     name: form.userName.value,
     age: form.age.value,
     favoriteColor: renderColor(form.favoriteColor.value),
   }
+
+  users.appendChild(renderList(user))
+  form.reset()
+  form.userName.focus()
+}
+form.addEventListener('submit', handlesubmit)
+
+function renderList(user) {
+  const ul = document.createElement('ul');
   Object.keys(user).map(function(key) {
     const item = renderListIterm(key, user[key])
     ul.appendChild(item)
   })
-  users.appendChild(ul)
+  return ul
 }
 
 function renderListIterm(ul, items) {
