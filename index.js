@@ -16,7 +16,7 @@ const handlesubmit = function(ev) {
 form.addEventListener('submit', handlesubmit)
 
 function renderList(user) {
-  const ul = document.createElement('ul');
+  const ul = document.createElement('dl');
   Object.keys(user).map(key => {
     const item = renderListIterm(key, user[key])
     ul.appendChild(item)
@@ -26,12 +26,18 @@ function renderList(user) {
 
 function renderListIterm(ul, items) {
   const li = document.createElement('li')
-  li.textContent = `${ul}: `
+  const term = document.createElement('dt')
+  term.textContent = ul
+  const desc = document.createElement('dd')
+
+  // li.textContent = `${ul}: `
   try {
-    li.appendChild(items)
+    desc.appendChild(items)
   } catch (e) {
-    li.textContent += items
+    desc.textContent += items
   }
+  li.appendChild(term)
+  li.appendChild(desc)
   return li;
 }
 
