@@ -13,14 +13,14 @@ function renderList(users){
   const ul = document.createElement('ul');
   const name = form.userName.value
   const age = form.age.value
-  const color = form.favoriteColor.value
+  const color = renderColor(form.favoriteColor.value)
 
   // renderListIterm(ul, name)
   // renderListIterm(ul, age)
   // renderListIterm(ul, color)
-  ul.appendChild(renderListIterm('Name: ', name));
-  ul.appendChild(renderListIterm('Age: ', age));
-  ul.appendChild(renderListIterm('Color: ', color));
+  ul.appendChild(renderListIterm('Name', name));
+  ul.appendChild(renderListIterm('Age', age));
+  ul.appendChild(renderListIterm('Color', color));
   users.appendChild(ul)
 }
 
@@ -28,7 +28,12 @@ function renderListIterm(ul, items) {
   // const list = ["Name: ", "Age: ", "Color: "]
   // let flag = 0;
   const li = document.createElement('li')
-  li.textContent = `${ul} ${items}`
+  li.textContent = `${ul}: `
+  try {
+    li.appendChild(items)
+  } catch (e) {
+    li.textContent +=items
+  }
   return li;
   // li.textContent = `${list[index]} ${items}`
   // if (list[index] == "Color: ") {
